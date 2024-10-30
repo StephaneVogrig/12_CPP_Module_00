@@ -6,11 +6,12 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 16:56:00 by svogrig           #+#    #+#             */
-/*   Updated: 2024/10/29 03:47:49 by svogrig          ###   ########.fr       */
+/*   Updated: 2024/10/29 22:40:33 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <iostream>
+# include <string>
 
 int	main(int argc, char **argv)
 {
