@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 16:56:00 by svogrig           #+#    #+#             */
-/*   Updated: 2024/11/20 02:04:48 by svogrig          ###   ########.fr       */
+/*   Created: 2024/10/29 22:32:53 by svogrig           #+#    #+#             */
+/*   Updated: 2024/11/20 02:05:09 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <iostream>
-# include <string>
+#include <unistd.h>
+#include <ctype.h>
 
 int	main(int argc, char **argv)
 {
 	if (argc == 1)
 	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+		write(1, "* LOUD AND UNBEARABLE FEEDBACK NOISE *", 38);
 	}
 	while (--argc)
 	{
 		argv++;
-		std::string str(*argv);
-		for (std::string::iterator it = str.begin(); it != str.end(); it++)
-		{
-			*it = std::toupper(*it);
+		char *str = *argv;
+		while (*str){
+			*str = toupper(*str);
+			str++;
 		}
-		std::cout << str;
+		write(1, *argv, str - *argv);
 	}
-	std::cout << std::endl;
+	write(1, "\n", 1);
 	return (0);
 }
