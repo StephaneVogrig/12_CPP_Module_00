@@ -6,12 +6,11 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 02:03:13 by svogrig           #+#    #+#             */
-/*   Updated: 2024/12/16 01:15:26 by svogrig          ###   ########.fr       */
+/*   Updated: 2024/12/16 14:46:04 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "PhoneBook.hpp"
-#include <iostream>
 
 PhoneBook::PhoneBook()
 {
@@ -74,18 +73,19 @@ int	PhoneBook::chooseIndex(void)
 
 	while (true)
 	{
-		std::cout << "Choose an index : ";
-		std::getline(std::cin, input);
+		std::cout << YELLOW << "Choose an index : " << RESET;
+		if(!std::getline(std::cin, input) || std::cin.eof())
+			throw std::runtime_error(RED "\nPhoneBook.chooseIndex(): getline(): error or eof" RESET);
 		if (input.length() != 1 || !isdigit(input[0]))
 		{
-			std::cout << "Invalid index, try again !" << std::endl;
+			std::cout << RED << "Invalid index, try again !" << RESET << std::endl;
 			continue ;
 		}
 		index = input[0] - '0';
 		if (index < this->registered)
 			break ;
-		std::cout << "the index must be between 0 and " << this->registered - 1;
-		std::cout << ", try again ! " << std::endl;
+		std::cout << RED << "the index must be between 0 and " << this->registered - 1;
+		std::cout << ", try again ! " << RESET << std::endl;
 	}
 	return (index);
 }
@@ -98,5 +98,6 @@ void PhoneBook::search(void)
 	if (this->registered == 0)
 		return ;
 	index = this->chooseIndex();
-	this->contacts[index].print();
+	if (index >= 0 && index <= this->registered)
+		this->contacts[index].print();
 }

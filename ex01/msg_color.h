@@ -1,35 +1,20 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   msg_color.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 02:03:27 by svogrig           #+#    #+#             */
-/*   Updated: 2024/12/16 14:47:08 by svogrig          ###   ########.fr       */
+/*   Created: 2024/12/16 14:43:54 by svogrig           #+#    #+#             */
+/*   Updated: 2024/12/16 14:47:26 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#ifndef MSG_COLOR_H
+# define MSG_COLOR_H
 
-# include <iostream>
-# include <string>
-# include "msg_color.h"
-
-class Contact
-{
-	public:
-		std::string firstName;
-		std::string lastName;
-		std::string nickName;
-		std::string phoneNumber;
-		std::string darkestSecret;
-
-		Contact(void);
-		~Contact(void);
-		void	print(void);
-		void	init(void);
-};
+# define RED "\e[0;31m"
+# define YELLOW "\e[0;33m"
+# define RESET "\e[0m"
 
 #endif

@@ -6,44 +6,41 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 02:03:42 by svogrig           #+#    #+#             */
-/*   Updated: 2024/12/16 00:23:54 by svogrig          ###   ########.fr       */
+/*   Updated: 2024/12/16 14:46:38 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#include <iostream>
 #include "Contact.hpp"
 
 Contact::Contact(void)
-{
-	// std::cout << "Constructor Contact" << std::endl;
-}
+{}
 
 Contact::~Contact(void)
-{
-	// std::cout << "Destructor Contact" << std::endl;
-}
+{}
 
 void	Contact::print(void)
 {
-	std::cout << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
-	std::cout << "First name : " << this->firstName << std::endl;
-	std::cout << "Last name : " << this->lastName << std::endl;
-	std::cout << "Nick name : " << this->nickName << std::endl;
-	std::cout << "Phone number : " << this->phoneNumber << std::endl;
-	std::cout << "Darkest secret : " << this->darkestSecret << std::endl;
+	std::cout << YELLOW << "First name     : " << RESET << this->firstName << std::endl;
+	std::cout << YELLOW << "Last name      : " << RESET << this->lastName << std::endl;
+	std::cout << YELLOW << "Nick name      : " << RESET << this->nickName << std::endl;
+	std::cout << YELLOW << "Phone number   : " << RESET << this->phoneNumber << std::endl;
+	std::cout << YELLOW << "Darkest secret : " << RESET << this->darkestSecret << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
-	std::cout << std::endl;
 }
 
 static std::string ask(std::string msg)
 {
 	std::string input;
 
-	while (input.empty())
+	while (true)
 	{
 		std::cout << msg << " : ";
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input) || std::cin.eof())
+			throw std::runtime_error(RED "\nContact.ask(): getline(): error or eof" RESET);
+		if (!input.empty())
+			break ;
+		std::cout << YELLOW << "The field can't be empty !" << RESET << std::endl;
 	}
 	return input;
 }
