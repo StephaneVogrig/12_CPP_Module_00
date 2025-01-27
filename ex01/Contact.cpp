@@ -6,15 +6,11 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 02:03:42 by svogrig           #+#    #+#             */
-/*   Updated: 2025/01/20 21:29:00 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/01/27 15:45:01 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-
-#include <iostream>
-#include <string>
-#include "msg_color.h"
 
 Contact::Contact(void)
 {}
