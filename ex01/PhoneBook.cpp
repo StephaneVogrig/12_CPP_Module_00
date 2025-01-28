@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 02:03:13 by svogrig           #+#    #+#             */
-/*   Updated: 2024/12/16 14:46:04 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/01/28 02:26:04 by svogrig          ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
@@ -56,11 +56,11 @@ void	PhoneBook::print(void)
 		std::cout << "|";
 		std::cout.width(10);
 		std::cout << i << "|";
-		PhoneBook::print_width(this->contacts[i].firstName);
+		PhoneBook::print_width(this->contacts[i].getFirstName());
 		std::cout << "|";
-		PhoneBook::print_width(this->contacts[i].lastName);
+		PhoneBook::print_width(this->contacts[i].getLastName());
 		std::cout << "|";
-		PhoneBook::print_width(this->contacts[i].nickName);
+		PhoneBook::print_width(this->contacts[i].getNickName());
 		std::cout << "|" << std::endl;
 	}
 	std::cout << "+----------+----------+----------+----------+" << std::endl;

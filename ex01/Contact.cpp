@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 02:03:42 by svogrig           #+#    #+#             */
-/*   Updated: 2025/01/27 15:45:01 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/01/28 02:26:57 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,31 @@ Contact::Contact(void)
 
 Contact::~Contact(void)
 {}
+
+std::string	Contact::getFirstName(void)
+{
+	return (this->firstName);
+}
+
+std::string	Contact::getLastName(void)
+{
+	return (this->lastName);
+}
+
+std::string	Contact::getNickName(void)
+{
+	return (this->nickName);
+}
+
+std::string	Contact::getPhoneNumber(void)
+{
+	return (this->phoneNumber);
+}
+
+std::string	Contact::getDarkestSecret(void)
+{
+	return (this->darkestSecret);
+}
 
 void	Contact::print(void)
 {
