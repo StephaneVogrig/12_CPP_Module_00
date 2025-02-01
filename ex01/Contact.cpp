@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 02:03:42 by svogrig           #+#    #+#             */
-/*   Updated: 2025/01/28 02:26:57 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/01 21:25:50 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ static std::string ask(std::string msg)
 		std::cout << msg << " : ";
 		if (!std::getline(std::cin, input) || std::cin.eof())
 			throw std::runtime_error(RED "\nContact.ask(): getline(): error or eof" RESET);
+		clean(input);
 		if (!input.empty())
 			break ;
 		std::cout << YELLOW << "The field can't be empty !" << RESET << std::endl;
