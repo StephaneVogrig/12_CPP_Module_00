@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 02:03:13 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/06 12:56:58 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/07 13:01:07 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ void PhoneBook::add(Contact contact)
 		this->registered++;
 }
 
-static
-void	PhoneBook::print_width(std::string str)
+void	PhoneBook::print_width(std::string str) const
 {
 	if (str.length() <= 10)
 	{
@@ -43,7 +42,7 @@ void	PhoneBook::print_width(std::string str)
 		std::cout << str.substr(0,9) << '.';
 }
 
-void	PhoneBook::print(void)
+void	PhoneBook::display(void) const
 {
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
 	std::cout << "|   Index  |First Name| Last Name| Nick Name|" << std::endl;
@@ -95,10 +94,10 @@ void PhoneBook::search(void)
 {
 	int index;
 
-	this->print();
+	this->display();
 	if (this->registered == 0)
 		return ;
 	index = this->chooseIndex();
 	if (index >= 0 && index <= this->registered)
-		this->contacts[index].print();
+		this->contacts[index].display();
 }
