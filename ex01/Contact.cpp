@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 02:03:42 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/01 21:25:50 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/06 12:57:01 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ void	Contact::print(void)
 	std::cout << "---------------------------------------------" << std::endl;
 }
 
-static std::string ask(std::string msg)
+static
+std::string ask(std::string msg)
 {
 	std::string input;
 

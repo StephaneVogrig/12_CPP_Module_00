@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 02:03:13 by svogrig           #+#    #+#             */
-/*   Updated: 2025/01/28 02:26:04 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/06 12:56:58 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void PhoneBook::add(Contact contact)
 		this->registered++;
 }
 
+static
 void	PhoneBook::print_width(std::string str)
 {
 	if (str.length() <= 10)

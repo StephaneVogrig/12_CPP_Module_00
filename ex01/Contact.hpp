@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 02:03:27 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/01 20:57:38 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/06 12:49:24 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 #include <iostream>
 #include <string>
-#include "msg_color.h"
-#include "clean_input.hpp"
+#include "utils.hpp"
 
 class Contact
 {
