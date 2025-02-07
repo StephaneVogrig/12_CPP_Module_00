@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 02:03:27 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/07 14:01:37 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/07 14:14:52 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,33 +26,33 @@ class Contact
 
 		/* getters */
 
-		std::string	getFirstName(void) const;
-		std::string	getLastName(void) const;
-		std::string	getNickName(void) const;
-		std::string	getPhoneNumber(void) const;
-		std::string	getDarkestSecret(void) const;
+		std::string getFirstName(void) const;
+		std::string getLastName(void) const;
+		std::string getNickName(void) const;
+		std::string getPhoneNumber(void) const;
+		std::string getDarkestSecret(void) const;
 
 		/* Setters */
 
-		void		setFirstName(const std::string fName);
-		void		setLastName(const std::string fName);
-		void		setNickName(const std::string nName);
-		void		setPhoneNumber(const std::string phone);
-		void 		setDarkSecret(const std::string secret);
+		void setFirstName(const std::string firstName);
+		void setLastName(const std::string lastName);
+		void setNickName(const std::string nickName);
+		void setPhoneNumber(const std::string phoneNumber);
+		void setDarkSecret(const std::string darkestSecret);
 
 		/* Display the contact's information */
 
-		void		display(void) const;
+		void display(void) const;
 
-		void		init(void);
+		void init(void);
 
 	private:
 
-		std::string firstName;
-		std::string lastName;
-		std::string nickName;
-		std::string phoneNumber;
-		std::string darkestSecret;
+		std::string _firstName;
+		std::string _lastName;
+		std::string _nickName;
+		std::string _phoneNumber;
+		std::string _darkestSecret;
 
 };
 

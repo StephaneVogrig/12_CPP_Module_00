@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 02:02:55 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/07 12:59:50 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/07 14:18:52 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ class PhoneBook
 		
 	private:
 	
-		Contact	contacts[8];
-		int		registered;
-		int		current_index;
+		Contact	_contacts[8];
+		int		_registered;
+		int		_current_index;
 
 		void	print_width(std::string) const;
 		int		chooseIndex(void);

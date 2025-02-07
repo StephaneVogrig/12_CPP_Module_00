@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 02:03:13 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/07 13:01:07 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/07 14:27:55 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 PhoneBook::PhoneBook()
 {
-	this->current_index = 0;
-	this->registered = 0;
+	_current_index = 0;
+	_registered = 0;
 }
 
 PhoneBook::~PhoneBook()
@@ -23,12 +23,12 @@ PhoneBook::~PhoneBook()
 
 void PhoneBook::add(Contact contact)
 {
-	this->contacts[current_index] = contact;
-	this->current_index++;
-	if (this->current_index == 8)
-		this->current_index = 0;
-	if (this->registered < 8)
-		this->registered++;
+	_contacts[_current_index] = contact;
+	_current_index++;
+	if (_current_index == 8)
+		_current_index = 0;
+	if (_registered < 8)
+		_registered++;
 }
 
 void	PhoneBook::print_width(std::string str) const
@@ -47,20 +47,20 @@ void	PhoneBook::display(void) const
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
 	std::cout << "|   Index  |First Name| Last Name| Nick Name|" << std::endl;
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
-	if (this->registered == 0)
+	if (_registered == 0)
 	{
 		std::cout << "|          the phoneBook is empty !         |" << std::endl;
 	}
-	for (int i = 0; i < this->registered; i++)
+	for (int i = 0; i < _registered; i++)
 	{
 		std::cout << "|";
 		std::cout.width(10);
 		std::cout << i << "|";
-		PhoneBook::print_width(this->contacts[i].getFirstName());
+		PhoneBook::print_width(_contacts[i].getFirstName());
 		std::cout << "|";
-		PhoneBook::print_width(this->contacts[i].getLastName());
+		PhoneBook::print_width(_contacts[i].getLastName());
 		std::cout << "|";
-		PhoneBook::print_width(this->contacts[i].getNickName());
+		PhoneBook::print_width(_contacts[i].getNickName());
 		std::cout << "|" << std::endl;
 	}
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
@@ -82,9 +82,9 @@ int	PhoneBook::chooseIndex(void)
 			continue ;
 		}
 		index = input[0] - '0';
-		if (index < this->registered)
+		if (index < _registered)
 			break ;
-		std::cout << RED << "the index must be between 0 and " << this->registered - 1;
+		std::cout << RED << "the index must be between 0 and " << _registered - 1;
 		std::cout << ", try again ! " << RESET << std::endl;
 	}
 	return (index);
@@ -95,9 +95,9 @@ void PhoneBook::search(void)
 	int index;
 
 	this->display();
-	if (this->registered == 0)
+	if (_registered == 0)
 		return ;
 	index = this->chooseIndex();
-	if (index >= 0 && index <= this->registered)
-		this->contacts[index].display();
+	if (index >= 0 && index <= _registered)
+		_contacts[index].display();
 }
