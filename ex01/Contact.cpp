@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 02:03:42 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/07 14:16:51 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/18 18:28:04 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,54 +27,54 @@ Contact::~Contact(void)
 
 std::string	Contact::getFirstName(void) const
 {
-	return (_firstName);
+	return (this->_firstName);
 }
 
 std::string	Contact::getLastName(void) const
 {
-	return (_lastName);
+	return (this->_lastName);
 }
 
 std::string	Contact::getNickName(void) const
 {
-	return (_nickName);
+	return (this->_nickName);
 }
 
 std::string	Contact::getPhoneNumber(void) const
 {
-	return (_phoneNumber);
+	return (this->_phoneNumber);
 }
 
 std::string	Contact::getDarkestSecret(void) const
 {
-	return (_darkestSecret);
+	return (this->_darkestSecret);
 }
 
 /* setters ------------------------------------------------------------------ */
 
 void	Contact::setFirstName(const std::string firstName)
 {
-	_firstName = firstName;
+	this->_firstName = firstName;
 }
 
 void	Contact::setLastName(const std::string lastName)
 {
-	_lastName = lastName;
+	this->_lastName = lastName;
 }
 
 void	Contact::setNickName(const std::string nickName)
 {
-	_nickName = nickName;
+	this->_nickName = nickName;
 }
 
 void Contact::setPhoneNumber(const std::string phoneNumber)
 {
-	_phoneNumber = phoneNumber;
+	this->_phoneNumber = phoneNumber;
 }
 
 void Contact::setDarkSecret(const std::string darkestSecret)
 {
-	_darkestSecret = darkestSecret;
+	this->_darkestSecret = darkestSecret;
 }
 
 /* Display the contact's information ---------------------------------------- */
@@ -109,9 +109,9 @@ std::string ask(std::string msg)
 
 void Contact::init(void)
 {
-	_firstName = ask("First name");
-	_lastName = ask("Last name");
-	_nickName = ask("Nick name");
-	_phoneNumber = ask("Phone number");
-	_darkestSecret = ask("Darkest secret");
+	this->_firstName = ask("First name");
+	this->_lastName = ask("Last name");
+	this->_nickName = ask("Nick name");
+	this->_phoneNumber = ask("Phone number");
+	this->_darkestSecret = ask("Darkest secret");
 }
